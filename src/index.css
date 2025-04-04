@@ -1,0 +1,36 @@
+@import "Tailwindcss";
+
+.mate-sc {
+  font-family: "Mate SC", serif;
+}
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.primary-bg {
+  @apply bg-[#456849];
+}
+
+Body {
+  @apply m-0 p-0 w-lvw h-lvh bg-black text-white;
+}
+
+.justify-center {
+  @apply flex justify-center;
+}
+
+.items-center {
+  @apply flex items-center;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-center-col {
+  @apply flex items-center justify-center flex-col;
+}
+
+.center-full {
+  @apply flex items-center justify-center flex-col h-lvh w-lvw;
+}
