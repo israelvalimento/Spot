@@ -13,6 +13,9 @@ import { Navtitle } from "./layout/Navtitle";
 import { Alert } from "./modals/Alert";
 import { ErrorText } from "./modals/Alert";
 import { ErrorDetails } from "./modals/Alert";
+// Inventory List
+import { ListDescription } from "./InventoryList/ListDescription";
+import { List } from "./InventoryList/List";
 
 export {
   Button,
@@ -26,4 +29,6 @@ export {
   Alert,
   ErrorText,
   ErrorDetails,
+  ListDescription,
+  List,
 };
