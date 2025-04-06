@@ -4,8 +4,8 @@ import {
   NavLinks,
   Heading,
   Navtitle,
-  ListDescription,
-  List,
+  ItemHeading,
+  ItemList,
 } from "../components/components";
 
 import { LinkDetails } from "../components/layout/SideBarLink";
@@ -35,10 +35,11 @@ export function Spot() {
           />
         ))}
       </NavBar>
-      <main className="absolute w-full md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden py-8">
-        <ListDescription></ListDescription>
+      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 pr-7 py-8">
+        <ItemHeading></ItemHeading>
+
         {items.map((list) => (
-          <List
+          <ItemList
             key={list.id}
             name={list.item_name}
             type={list.item_type}

@@ -14,8 +14,8 @@ import { Alert } from "./modals/Alert";
 import { ErrorText } from "./modals/Alert";
 import { ErrorDetails } from "./modals/Alert";
 // Inventory List
-import { ListDescription } from "./InventoryList/ListDescription";
-import { List } from "./InventoryList/List";
+import { ItemHeading } from "./InventoryList/ItemHeading";
+import { ItemList } from "./InventoryList/ItemList";
 
 export {
   Button,
@@ -29,6 +29,6 @@ export {
   Alert,
   ErrorText,
   ErrorDetails,
-  ListDescription,
-  List,
+  ItemHeading,
+  ItemList,
 };
