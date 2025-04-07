@@ -2,18 +2,22 @@ import React from "react";
 
 export function ItemList({ name, type, date, qty }) {
   return (
-    <table className="justify-center even:bg-[#d9d9d93a] my-3 rounded-lg  text-nowrap">
+    <table className="flex w-full  even:bg-[#d9d9d93a] my-3 rounded-lg">
       <tr>
         <th></th>
         <th></th>
         <th></th>
         <th></th>
       </tr>
-      <tr className="py-5 px-5">
-        <td className="pl-20 w-122">{name}</td>
-        <td className="w-92">{type}</td>
-        <td className="w-62">{date}</td>
-        <td className="text-center w-92">{qty}</td>
+      <tr className="w-full flex gap-7.5 md:gap-x-5 justify-around lg:pl-32 py-5 px-5">
+        <td className="text-left md:text-left lg:text-left w-full">{name}</td>
+        <td className="text-center md:text-center lg:text-left w-full">
+          {type}
+        </td>
+        <td className="text-nowrap text-right md:text-center lg:text-left w-full">
+          {date}
+        </td>
+        <td className="text-right md:text-center lg:text-left w-full">{qty}</td>
       </tr>
     </table>
   );

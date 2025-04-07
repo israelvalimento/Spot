@@ -6,6 +6,7 @@ import { Goto } from "./inputs/Goto";
 import { Card } from "./ui/Card";
 import { Heading } from "./ui/Heading";
 // LAYOUT FOLDER
+import { Header } from "./layout/Header";
 import NavBar from "./layout/NavBar";
 import NavLinks from "./layout/NavLinks";
 import { Navtitle } from "./layout/Navtitle";
@@ -23,6 +24,7 @@ export {
   Goto,
   Card,
   Heading,
+  Header,
   NavBar,
   NavLinks,
   Navtitle,

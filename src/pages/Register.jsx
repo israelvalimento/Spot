@@ -14,22 +14,26 @@ export function Register() {
               Meet me at the SPOT
             </Heading>
           </section>
-          <section className="w-3/4 flex flex-col lg:flex lg:flex-row gap-5">
+          <section className="lg:w-3/4 flex flex-col lg:flex lg:flex-row gap-5">
             <Input
-              className="w-full lg:w-1/2"
+              className=" lg:w-1/2"
               type="text"
               placeholder="Firstname"
             ></Input>
             <Input
-              className="w-full lg:w-1/2"
+              className="lg:w-1/2"
               type="text"
               placeholder="Lastname"
             ></Input>
           </section>
-          <Input className="w-3/4" type="text" placeholder="Username"></Input>
+          <Input
+            className="lg:w-3/4"
+            type="text"
+            placeholder="Username"
+          ></Input>
 
           <Input
-            className="w-3/4"
+            className="lg:w-3/4"
             type="Password"
             placeholder="Password"
           ></Input>
