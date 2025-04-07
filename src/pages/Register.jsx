@@ -38,7 +38,7 @@ export function Register() {
             placeholder="Password"
           ></Input>
           <Button
-            onClick={() => Navigate("/")}
+            onClick={() => Navigate("/Login")}
             className="font-semibold primary-bg mt-8 "
           >
             Register
