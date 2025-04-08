@@ -26,7 +26,7 @@ export function Login() {
               placeholder="Password"
             ></Input>
             <Button
-              onClick={() => navigate("/home")}
+              onClick={() => navigate("/Home")}
               className="font-semibold  primary-bg mt-8"
             >
               Login

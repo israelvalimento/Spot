@@ -1,4 +1,5 @@
 // INPUT FOLDER
+import { DropDown } from "./inputs/DropDown";
 import { Input } from "./inputs/Input";
 import { Button } from "./inputs/Button";
 import { Goto } from "./inputs/Goto";
@@ -19,6 +20,7 @@ import { ItemHeading } from "./InventoryList/ItemHeading";
 import { ItemList } from "./InventoryList/ItemList";
 
 export {
+  DropDown,
   Button,
   Input,
   Goto,
