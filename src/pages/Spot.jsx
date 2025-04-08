@@ -18,10 +18,15 @@ export function Spot() {
   const Width = ScreenWidth();
 
   useEffect(() => {
-    fetch("https://67f0cd0e2a80b06b8898b1fb.mockapi.io/inventory/listofitems")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
+  (async()=>{
+
+    const response = await fetch("https://67f0cd0e2a80b06b8898b1fb.mockapi.io/inventory/listofitems");
+    const data = await response.json();
+    setItems(data);
+
+  })();
   }, []);
+
 
   return (
     <>
