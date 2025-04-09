@@ -12,24 +12,13 @@ import {
   DropDown,
 } from "../components/components";
 import { LinkDetails } from "../components/layout/SideBarLink";
-import { ScreenWidth } from "../hooks/ScreenWidth,";
+import { ScreenWidth, ItemData } from "../hooks/hooks";
 
 export function Add_Item() {
   const [link] = useState(LinkDetails);
   const routes = ["/Home", "/Add_Item", "/Inventory"];
-  const [items, setItems] = useState([]);
   const Width = ScreenWidth();
-
-  useEffect(() => {
-    (async()=>{
-
-      const response = await fetch("https://67f0cd0e2a80b06b8898b1fb.mockapi.io/inventory/listofitems");
-      const data = await response.json();
-      setItems(data);
- 
-    })();
-  }, []);
-
+  const items = ItemData();
 
   return (
     <>
@@ -61,15 +50,24 @@ export function Add_Item() {
               placeholder="Item type"
             ></Input>
             <DropDown></DropDown>
-            <Button>search</Button>
-            <Button>search</Button>
+
+            <img
+              className="inline ml-5 size-13 cursor-pointer"
+              src="/add-icon.svg"
+              alt=""
+            />
+            <img
+              className="inline size-13 cursor-pointer"
+              src="/del-icon.svg"
+              alt=""
+            />
           </article>
 
-          <Heading className="bg-black w-82 px-5 poppins font-semibold">
+          <Heading className="bg-black mt-25 w-82 px-5 poppins font-semibold">
             Added list's
           </Heading>
         </section>
-        <hr className="z-[-1] absolute top-94 w-full" />
+        <hr className="z-[-1] absolute top-84 w-full" />
         <ItemHeading></ItemHeading>
         {items.map((list) => (
           <ItemList

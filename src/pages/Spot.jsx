@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Header,
   NavBar,
@@ -9,24 +9,13 @@ import {
   ItemList,
 } from "../components/components";
 import { LinkDetails } from "../components/layout/SideBarLink";
-import { ScreenWidth } from "../hooks/ScreenWidth,";
+import { ScreenWidth, ItemData } from "../hooks/hooks";
 
 export function Spot() {
   const [link] = useState(LinkDetails);
   const routes = ["/home", "/Add_Item", "/Inventory"];
-  const [items, setItems] = useState([]);
   const Width = ScreenWidth();
-
-  useEffect(() => {
-  (async()=>{
-
-    const response = await fetch("https://67f0cd0e2a80b06b8898b1fb.mockapi.io/inventory/listofitems");
-    const data = await response.json();
-    setItems(data);
-
-  })();
-  }, []);
-
+  const items = ItemData();
 
   return (
     <>
