@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import {
   Header,
   NavBar,
@@ -16,24 +16,33 @@ export function Spot() {
   const routes = ["/home", "/Add_Item", "/Inventory"];
   const Width = ScreenWidth();
   const items = ItemData();
+  const [hidden, setHidden] = useState(false);
+
+  const ClickHandler = () => {
+    setHidden((prev) => !prev);
+  };
 
   return (
     <>
-      {Width <= 772 && <Header />}
+      {Width <= 767 && <Header onClick={ClickHandler} />}
 
-      <NavBar>
-        <Navtitle>
-          <Heading className="mate-sc hidden lg:block">Spot</Heading>
-        </Navtitle>
-        {link.map((links, index) => (
-          <NavLinks
-            to={routes[index]}
-            key={links.id}
-            src={links.img}
-            NavName={links.name}
-          />
-        ))}
-      </NavBar>
+      {(hidden || Width >= 768) && (
+        <NavBar>
+          <Navtitle>
+            <Heading className="mate-sc  md:hidden lg:block">
+              {Width <= 768 && hidden ? "Hi israel" : "SPOT"}
+            </Heading>
+          </Navtitle>
+          {link.map((links, index) => (
+            <NavLinks
+              to={routes[index]}
+              key={links.id}
+              src={links.img}
+              NavName={links.name}
+            />
+          ))}
+        </NavBar>
+      )}
       <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 pr-8 py-8">
         <ItemHeading></ItemHeading>
 

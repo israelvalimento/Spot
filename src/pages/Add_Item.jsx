@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import {
   Header,
   NavBar,
@@ -19,24 +19,35 @@ export function Add_Item() {
   const routes = ["/Home", "/Add_Item", "/Inventory"];
   const Width = ScreenWidth();
   const items = ItemData();
+  const [hidden, setHidden] = useState(false);
+
+  const ClickHandler = () => {
+    setHidden((prev) => !prev);
+  };
+
+  useState(() => {}, [Width]);
 
   return (
     <>
-      {Width <= 772 && <Header />}
+      {Width <= 764 && <Header onClick={ClickHandler} />}
 
-      <NavBar>
-        <Navtitle>
-          <Heading className="mate-sc hidden lg:block">Spot</Heading>
-        </Navtitle>
-        {link.map((links, index) => (
-          <NavLinks
-            to={routes[index]}
-            key={links.id}
-            src={links.img}
-            NavName={links.name}
-          />
-        ))}
-      </NavBar>
+      {(hidden || Width >= 768) && (
+        <NavBar>
+          <Navtitle>
+            <Heading className="mate-sc  md:hidden lg:block">
+              {Width <= 768 && hidden ? "Hi israel" : "SPOT"}
+            </Heading>
+          </Navtitle>
+          {link.map((links, index) => (
+            <NavLinks
+              to={routes[index]}
+              key={links.id}
+              src={links.img}
+              NavName={links.name}
+            />
+          ))}
+        </NavBar>
+      )}
       <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 pr-8 py-8">
         <section className="ml-20">
           <Heading className="poppins px-5 font-semibold">Add Item's</Heading>
@@ -63,7 +74,7 @@ export function Add_Item() {
             />
           </article>
 
-          <Heading className="bg-black mt-25 w-82 px-5 poppins font-semibold">
+          <Heading className="bg-black mt-25 w-82 px-5  poppins font-semibold">
             Added list's
           </Heading>
         </section>
