@@ -13,6 +13,7 @@ import {
 } from "../components/components";
 import { LinkDetails } from "../components/layout/SideBarLink";
 import { ScreenWidth, ItemData } from "../hooks/hooks";
+import { ImgBtn } from "../components/inputs/ImgBtn";
 
 export function Add_Item() {
   const [link] = useState(LinkDetails);
@@ -48,37 +49,35 @@ export function Add_Item() {
           ))}
         </NavBar>
       )}
-      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 pr-8 py-8">
-        <section className="ml-20">
+      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 md:pr-8 py-8">
+        <section className="text-center md:text-left  md:ml-20">
           <Heading className="poppins px-5 font-semibold">Add Item's</Heading>
-          <article className="mt-20 px-5 space-x-5">
+
+          {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
+          <article className="mt-20  px-5 space-x-3 md:space-x-5">
             <Input
-              className="poppins text-white placeholder:text-white"
+              className="poppins w-30 text-white placeholder:text-white"
               placeholder="Item name"
             ></Input>
             <Input
-              className="poppins text-white placeholder:text-white"
+              className="poppins w-28 text-white placeholder:text-white"
               placeholder="Item type"
             ></Input>
-            <DropDown></DropDown>
-
-            <img
-              className="inline ml-5 size-13 cursor-pointer"
+            <DropDown className="w-15 mt-5 md:w-32"></DropDown>
+            <ImgBtn
+              className="md:ml-5 size-9.5  md:size-11.5"
               src="/add-icon.svg"
-              alt=""
             />
-            <img
-              className="inline size-13 cursor-pointer"
-              src="/del-icon.svg"
-              alt=""
-            />
+            <ImgBtn className="size-9.5  md:size-11.5" src="/del-icon.svg" />
           </article>
+          {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
 
-          <Heading className="bg-black mt-25 w-82 px-5  poppins font-semibold">
+          <Heading className="bg-black mx-auto w-80 text-nowrap md:mx-0 mt-25 md:w-82 md:px-5  poppins font-semibold">
             Added list's
           </Heading>
+          <hr className="z-[-1] absolute left-0 top-132 md:top-95.5 lg:top-84 w-full" />
         </section>
-        <hr className="z-[-1] absolute top-84 w-full" />
+
         <ItemHeading></ItemHeading>
         {items.map((list) => (
           <ItemList

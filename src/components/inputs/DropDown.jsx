@@ -4,7 +4,7 @@ export function DropDown({ className = "", ref }) {
   return (
     <main className="inline w-full  relative">
       <select
-        className={`${className}z-20 appearance-none poppins w-32 rounded-lg border-1 px-3 py-3`}
+        className={`${className} z-20 appearance-none poppins rounded-lg border-1 px-3 py-3`}
       >
         <option className="hidden" disabled selected value="">
           Qty

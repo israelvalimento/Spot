@@ -43,17 +43,19 @@ export function Spot() {
           ))}
         </NavBar>
       )}
-      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 pr-8 py-8">
+      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 md:pr-8 py-8">
         <ItemHeading></ItemHeading>
 
         {items.map((list) => (
-          <ItemList
-            key={list.id}
-            name={list.item_name}
-            type={list.item_type}
-            date={list.date.slice(0, list.date.indexOf("T"))}
-            qty={list.qty}
-          />
+          <>
+            <ItemList
+              key={list.id}
+              name={list.item_name}
+              type={list.item_type}
+              date={list.date.slice(0, list.date.indexOf("T"))}
+              qty={list.qty}
+            />
+          </>
         ))}
       </main>
     </>

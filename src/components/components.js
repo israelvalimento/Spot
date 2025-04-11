@@ -3,6 +3,7 @@ import { DropDown } from "./inputs/DropDown";
 import { Input } from "./inputs/Input";
 import { Button } from "./inputs/Button";
 import { Goto } from "./inputs/Goto";
+import { ImgBtn } from "./inputs/ImgBtn";
 // UI FOLDER
 import { Card } from "./ui/Card";
 import { Heading } from "./ui/Heading";
