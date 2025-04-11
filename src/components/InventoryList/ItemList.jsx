@@ -5,7 +5,7 @@ export function ItemList({ name, type, date, qty }) {
   const location = useLocation();
 
   return (
-    <table className="flex w-full  odd:bg-[#d9d9d93a] my-3 rounded-lg">
+    <table className="my-3 flex w-full rounded-lg odd:bg-[#d9d9d93a]">
       <tr>
         <th></th>
         <th></th>
@@ -13,34 +13,34 @@ export function ItemList({ name, type, date, qty }) {
         <th></th>
       </tr>
 
-      <tr className="w-full flex gap-7.5 md:gap-x-5 items-center justify-around lg:pl-32 py-5 px-6.5 leading-loose">
+      <tr className="flex w-full items-center justify-around gap-7.5 px-6.5 py-5 leading-loose md:gap-x-5 lg:pl-32">
         {location.pathname == "/Home" ? (
           <>
-            <td className="text-left md:text-left lg:text-left w-full">
+            <td className="w-full text-left md:text-left lg:text-left">
               {name}
             </td>
-            <td className="text-center md:text-center lg:text-left w-full">
+            <td className="w-full text-center md:text-center lg:text-left">
               {type}
             </td>
-            <td className="text-right md:text-center lg:text-left w-full">
+            <td className="w-full text-right md:text-center lg:text-left">
               {date}
             </td>
-            <td className="text-right md:text-center lg:text-left w-full">
+            <td className="w-full text-right md:text-center lg:text-left">
               {qty}
             </td>
           </>
         ) : (
           <>
-            <td className="text-left md:text-left lg:text-left w-full">
+            <td className="w-full text-left md:text-left lg:text-left">
               {name}
             </td>
-            <td className="text-center md:text-center lg:text-left w-full">
+            <td className="w-full text-center md:text-center lg:text-left">
               {type}
             </td>
-            <td className="text-right md:text-center lg:text-left w-full">
+            <td className="w-full text-right md:text-center lg:text-left">
               {date}
             </td>
-            <td className="text-right  md:text-center lg:text-left w-full">
+            <td className="w-full text-right md:text-center lg:text-left">
               {qty}
             </td>
             <ImgBtn

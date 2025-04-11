@@ -12,7 +12,7 @@
 }
 
 Body {
-  @apply m-0 p-0 w-lvw h-lvh overflow-x-clip overflow-y-auto bg-black text-white;
+  @apply m-0 h-lvh w-lvw overflow-x-clip overflow-y-auto bg-black p-0 text-white;
 }
 
 .justify-center {
@@ -28,9 +28,9 @@ Body {
 }
 
 .flex-center-col {
-  @apply flex items-center justify-center flex-col;
+  @apply flex flex-col items-center justify-center;
 }
 
 .center-full {
-  @apply flex items-center justify-center flex-col h-lvh w-lvw;
+  @apply flex h-lvh w-lvw flex-col items-center justify-center;
 }

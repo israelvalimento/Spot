@@ -6,10 +6,10 @@ export function Login() {
   const navigate = useNavigate();
   return (
     <>
-      <main className="center-full ">
+      <main className="center-full">
         <Card>
-          <section className="flex-center  flex-col gap-5">
-            <section className="space-y-3 mb-5">
+          <section className="flex-center flex-col gap-5">
+            <section className="mb-5 space-y-3">
               <Heading className="mate-sc text-7xl">Spot</Heading>
               <Heading className="mate-sc text-[14px]">
                 Meet me at the SPOT
@@ -27,12 +27,12 @@ export function Login() {
             ></Input>
             <Button
               onClick={() => navigate("/Home")}
-              className="font-semibold  primary-bg mt-8"
+              className="primary-bg mt-8 font-semibold"
             >
               Login
             </Button>
 
-            <p className="poppins text-[12px] mt-3 text-nowrap">
+            <p className="poppins mt-3 text-[12px] text-nowrap">
               Don't Have an account? <Goto to="/Register">register</Goto>
             </p>
           </section>

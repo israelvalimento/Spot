@@ -4,11 +4,11 @@ export function Alert({ children, visible }) {
   return (
     <>
       <main
-        className={`relative z-10 w-82 px-10 py-5 rounded-2xl flex-center-col bg-amber-200 gap-5`}
+        className={`flex-center-col relative z-10 w-82 gap-5 rounded-2xl bg-amber-200 px-10 py-5`}
       >
         <section>
           <img
-            className={`absolute border-1 top-2 right-2 size-7 cursor-pointer`}
+            className={`absolute top-2 right-2 size-7 cursor-pointer border-1`}
             alt=""
           />
         </section>
@@ -22,9 +22,9 @@ export function Alert({ children, visible }) {
 }
 
 export function ErrorText({ children }) {
-  return <h1 className="text-5xl text-center ">{children}</h1>;
+  return <h1 className="text-center text-5xl">{children}</h1>;
 }
 
 export function ErrorDetails({ children }) {
-  return <p className="text-center  text-2xl">{children}</p>;
+  return <p className="text-center text-2xl">{children}</p>;
 }

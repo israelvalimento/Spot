@@ -35,7 +35,7 @@ export function Add_Item() {
       {(hidden || Width >= 768) && (
         <NavBar>
           <Navtitle>
-            <Heading className="mate-sc  md:hidden lg:block">
+            <Heading className="mate-sc md:hidden lg:block">
               {Width <= 768 && hidden ? "Hi israel" : "SPOT"}
             </Heading>
           </Navtitle>
@@ -49,12 +49,12 @@ export function Add_Item() {
           ))}
         </NavBar>
       )}
-      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 md:pr-8 py-8">
-        <section className="text-center md:text-left  md:ml-20">
+      <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
+        <section className="text-center md:ml-20 md:text-left">
           <Heading className="poppins px-5 font-semibold">Add Item's</Heading>
 
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
-          <article className="mt-20  px-5 space-x-3 md:space-x-5">
+          <article className="mt-20 space-x-3 px-5 md:space-x-5">
             <Input
               className="poppins w-30 text-white placeholder:text-white"
               placeholder="Item name"
@@ -63,19 +63,19 @@ export function Add_Item() {
               className="poppins w-28 text-white placeholder:text-white"
               placeholder="Item type"
             ></Input>
-            <DropDown className="w-15 mt-5 md:w-32"></DropDown>
+            <DropDown className="mt-5 w-15 md:w-32"></DropDown>
             <ImgBtn
-              className="md:ml-5 size-9.5  md:size-11.5"
+              className="size-9.5 md:ml-5 md:size-11.5"
               src="/add-icon.svg"
             />
-            <ImgBtn className="size-9.5  md:size-11.5" src="/del-icon.svg" />
+            <ImgBtn className="size-9.5 md:size-11.5" src="/del-icon.svg" />
           </article>
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
 
-          <Heading className="bg-black mx-auto w-80 text-nowrap md:mx-0 mt-25 md:w-82 md:px-5  poppins font-semibold">
+          <Heading className="poppins mx-auto mt-25 w-80 bg-black font-semibold text-nowrap md:mx-0 md:w-82 md:px-5">
             Added list's
           </Heading>
-          <hr className="z-[-1] absolute left-0 top-132 md:top-95.5 lg:top-84 w-full" />
+          <hr className="absolute top-132 left-0 z-[-1] w-full md:top-95.5 lg:top-84" />
         </section>
 
         <ItemHeading></ItemHeading>

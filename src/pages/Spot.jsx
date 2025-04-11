@@ -29,7 +29,7 @@ export function Spot() {
       {(hidden || Width >= 768) && (
         <NavBar>
           <Navtitle>
-            <Heading className="mate-sc  md:hidden lg:block">
+            <Heading className="mate-sc md:hidden lg:block">
               {Width <= 768 && hidden ? "Hi israel" : "SPOT"}
             </Heading>
           </Navtitle>
@@ -43,7 +43,7 @@ export function Spot() {
           ))}
         </NavBar>
       )}
-      <main className="md:ml-[9.3%] lg:ml-[16.7%] overflow-x-hidden px-5 md:pr-8 py-8">
+      <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
         <ItemHeading></ItemHeading>
 
         {items.map((list) => (
