@@ -81,7 +81,7 @@ export function Add_Item() {
           </article>
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
 
-          <section className="relative w-full">
+          <section className="relative z-[-1] w-full">
             <Heading className="poppins mx-auto w-80 bg-black font-semibold text-nowrap md:mx-0 md:w-82 md:px-5">
               Added list's
             </Heading>
@@ -90,9 +90,9 @@ export function Add_Item() {
         </section>
 
         <ItemHeading></ItemHeading>
-        {items.map((list) => (
+        {items.map((list, index) => (
           <ItemList
-            key={list.id}
+            key={index}
             name={list.item_name}
             type={list.item_type}
             date={list.date.slice(0, list.date.indexOf("T"))}

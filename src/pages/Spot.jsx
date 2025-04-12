@@ -46,10 +46,10 @@ export function Spot() {
       <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
         <ItemHeading></ItemHeading>
 
-        {items.map((list) => (
+        {items.map((list, index) => (
           <>
             <ItemList
-              key={list.id}
+              key={index}
               name={list.item_name}
               type={list.item_type}
               date={list.date.slice(0, list.date.indexOf("T"))}

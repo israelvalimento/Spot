@@ -2,11 +2,11 @@ import arrow_down from "./assets/arrow_down.svg";
 
 export function DropDown({ className = "", ref }) {
   return (
-    <main className="relative flex">
+    <main className="relative">
       <select
-        className={`${className} poppins z-20 appearance-none rounded-lg border-1 px-3 py-3`}
+        className={`${className} poppins z-20 flex appearance-none rounded-lg border-1 px-3 py-3`}
       >
-        <option className="hidden" disabled selected value="">
+        <option className="hidden" disabled defaultValue={true}>
           Qty
         </option>
         <option className="bg-black" value="1">

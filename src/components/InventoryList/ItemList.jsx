@@ -5,55 +5,54 @@ export function ItemList({ name, type, date, qty }) {
   const location = useLocation();
 
   return (
-    <table className="my-3 flex w-full rounded-lg odd:bg-[#d9d9d93a]">
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr className="flex w-full items-center justify-around gap-7.5 px-6.5 py-5 leading-loose md:gap-x-5 lg:pl-32">
-        {location.pathname == "/Home" ? (
-          <>
-            <td className="w-full text-left md:text-left lg:text-left">
-              {name}
-            </td>
-            <td className="w-full text-center md:text-center lg:text-left">
-              {type}
-            </td>
-            <td className="w-full text-right md:text-center lg:text-left">
-              {date}
-            </td>
-            <td className="w-full text-right md:text-center lg:text-left">
-              {qty}
-            </td>
-          </>
-        ) : (
-          <>
-            <td className="w-full text-left md:text-left lg:text-left">
-              {name}
-            </td>
-            <td className="w-full text-center md:text-center lg:text-left">
-              {type}
-            </td>
-            <td className="w-full text-right md:text-center lg:text-left">
-              {date}
-            </td>
-            <td className="w-full text-right md:text-center lg:text-left">
-              {qty}
-            </td>
-            <ImgBtn
-              className="absolute right-52 size-8.5"
-              src="/edit-icon.svg"
-            />
-            <ImgBtn
-              className="absolute right-38 size-8.5"
-              src="/del-icon.svg"
-            />
-          </>
-        )}
-      </tr>
+    <table className="my-3 flex w-full">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody className="my-3 flex w-full rounded-lg even:bg-[#d9d9d93a]">
+        <tr className="relative flex w-full items-center justify-around gap-8.5 px-6.5 py-5 leading-loose md:gap-7.5">
+          {location.pathname == "/Home" ? (
+            <>
+              <td className="w-22 text-left md:text-left lg:w-full lg:text-left">
+                {name}
+              </td>
+              <td className="text-left md:text-center lg:w-full lg:text-left">
+                {type}
+              </td>
+              <td className="text-left text-nowrap md:text-center lg:w-full lg:text-left">
+                {date}
+              </td>
+              <td className="text-left md:text-center lg:w-full lg:text-left">
+                {qty}
+              </td>
+            </>
+          ) : (
+            <>
+              <td className="w-22 text-left md:text-left lg:w-full lg:text-left">
+                {name}
+              </td>
+              <td className="text-left md:text-center lg:w-full lg:text-left">
+                {type}
+              </td>
+              <td className="text-left md:text-center lg:w-full lg:text-left">
+                {date}
+              </td>
+              <td className="text-left md:text-center lg:w-full lg:text-left">
+                {qty}
+              </td>
+              <td className="absolute right-[2%] hidden gap-3.5 md:hidden lg:flex">
+                <ImgBtn className="size-8.5" src="/edit-icon.svg" />
+                <ImgBtn className="size-8.5" src="/del-icon.svg" />
+              </td>
+            </>
+          )}
+        </tr>
+      </tbody>
     </table>
   );
 }
