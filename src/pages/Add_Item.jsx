@@ -50,32 +50,43 @@ export function Add_Item() {
         </NavBar>
       )}
       <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
-        <section className="text-center md:ml-20 md:text-left">
-          <Heading className="poppins px-5 font-semibold">Add Item's</Heading>
+        <section className="text-center md:ml-8.5 md:text-left lg:ml-22">
+          <Heading className="poppins font-semibold md:px-5">
+            Add Item's
+          </Heading>
 
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
-          <article className="mt-20 space-x-3 px-5 md:space-x-5">
-            <Input
-              className="poppins w-30 text-white placeholder:text-white"
-              placeholder="Item name"
-            ></Input>
-            <Input
-              className="poppins w-28 text-white placeholder:text-white"
-              placeholder="Item type"
-            ></Input>
-            <DropDown className="mt-5 w-15 md:w-32"></DropDown>
-            <ImgBtn
-              className="size-9.5 md:ml-5 md:size-11.5"
-              src="/add-icon.svg"
-            />
-            <ImgBtn className="size-9.5 md:size-11.5" src="/del-icon.svg" />
+          <article className="my-20 flex w-full flex-col gap-3 px-5 md:h-12 md:flex-row">
+            <Input className="w-full md:w-64" placeholder="Item name"></Input>
+            <Input className="w-full md:w-64" placeholder="Item type"></Input>
+            <DropDown className="w-full md:w-22" />
+
+            {Width >= 776 ? (
+              <>
+                <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
+                  <ImgBtn src="/add-icon.svg" />
+                  <ImgBtn src="/del-icon.svg" />
+                </section>
+              </>
+            ) : (
+              <>
+                <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
+                  <Button className="poppins primary-bg font-semibold">
+                    ADD
+                  </Button>
+                  <Button className="poppins bg-[red]">DELETE</Button>
+                </section>
+              </>
+            )}
           </article>
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
 
-          <Heading className="poppins mx-auto mt-25 w-80 bg-black font-semibold text-nowrap md:mx-0 md:w-82 md:px-5">
-            Added list's
-          </Heading>
-          <hr className="absolute top-132 left-0 z-[-1] w-full md:top-95.5 lg:top-84" />
+          <section className="relative w-full">
+            <Heading className="poppins mx-auto w-80 bg-black font-semibold text-nowrap md:mx-0 md:w-82 md:px-5">
+              Added list's
+            </Heading>
+            <hr className="absolute top-7 left-0 z-[-1] w-full md:w-lvw md:translate-x-[-110px]" />
+          </section>
         </section>
 
         <ItemHeading></ItemHeading>
