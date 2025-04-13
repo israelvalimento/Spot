@@ -21,6 +21,10 @@ export function Add_Item() {
   const Width = ScreenWidth();
   const items = ItemData();
   const [hidden, setHidden] = useState(false);
+  const [pull, setPull] = useState(false);
+  const pullHandler = () => {
+    setPull((prev) => !prev);
+  };
 
   const ClickHandler = () => {
     setHidden((prev) => !prev);
@@ -49,6 +53,7 @@ export function Add_Item() {
           ))}
         </NavBar>
       )}
+
       <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
         <section className="text-center md:ml-8.5 md:text-left lg:ml-22">
           <Heading className="poppins font-semibold md:px-5">
@@ -65,7 +70,6 @@ export function Add_Item() {
               <>
                 <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
                   <ImgBtn src="/add-icon.svg" />
-                  <ImgBtn src="/del-icon.svg" />
                 </section>
               </>
             ) : (
@@ -74,7 +78,6 @@ export function Add_Item() {
                   <Button className="poppins primary-bg font-semibold">
                     ADD
                   </Button>
-                  <Button className="poppins bg-[red]">DELETE</Button>
                 </section>
               </>
             )}
@@ -85,7 +88,7 @@ export function Add_Item() {
             <Heading className="poppins mx-auto w-80 bg-black font-semibold text-nowrap md:mx-0 md:w-82 md:px-5">
               Added list's
             </Heading>
-            <hr className="absolute top-7 left-0 z-[-1] w-full md:w-lvw md:translate-x-[-110px]" />
+            <hr className="absolute top-7 left-0 z-[-1] w-full text-[#b6b6b663] md:w-lvw md:translate-x-[-110px]" />
           </section>
         </section>
 
@@ -100,6 +103,23 @@ export function Add_Item() {
           />
         ))}
       </main>
+      <div className="fixed bottom-30 flex w-full justify-center md:pl-22 lg:pl-50">
+        <img
+          onClick={pullHandler}
+          className={`${pull ? "translate-y-[100px] rotate-[-0deg]" : "block"} size-10 rotate-180 cursor-pointer duration-500`}
+          src="
+        /pull-up-icon.svg"
+          alt=""
+        />
+      </div>
+      <section
+        className={`${pull ? "translate-y-[100px]" : "block"} fixed bottom-0 flex w-full items-center justify-center overflow-hidden bg-[#00000069] outline-1 outline-[#b6b6b663] backdrop-blur-sm duration-500 md:pr-8 md:pl-[9.3%] lg:pl-[16.7%]`}
+      >
+        <div className="flex items-center gap-5 overflow-hidden px-5 py-4 lg:w-1/2">
+          <Button className="primary-bg">Confirm</Button>
+          <Button className="bg-[red]">DELETE ALL</Button>
+        </div>
+      </section>
     </>
   );
 }
