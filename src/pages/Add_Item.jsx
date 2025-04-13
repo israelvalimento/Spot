@@ -30,8 +30,6 @@ export function Add_Item() {
     setHidden((prev) => !prev);
   };
 
-  useState(() => {}, [Width]);
-
   return (
     <>
       {Width <= 764 && <Header onClick={ClickHandler} />}
