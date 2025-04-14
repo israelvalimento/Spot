@@ -4,17 +4,17 @@ export function Header({ className = "", onClick }) {
   return (
     <main className="z-20 w-full md:hidden lg:hidden">
       <header
-        className={`z-20 flex outline-1 outline-[#b6b6b6] py-7.5 px-8 justify-between items-center w-full`}
+        className={`z-20 flex w-full items-center justify-between px-8 py-7.5 outline-1 outline-[#b6b6b6]`}
       >
         <img
           onClick={onClick}
-          className={`z-200 cursor-pointer size-7.5`}
+          className={`z-200 size-7.5 cursor-pointer`}
           src="/menu.svg"
           alt=""
         />
-        <p className="cursor-pointer  text-3xl mate-sc font-semibold">SPOT</p>
+        <p className="mate-sc cursor-pointer text-3xl font-semibold">SPOT</p>
         <img
-          className="cursor-pointer size-7.5"
+          className="size-7.5 cursor-pointer"
           src="/UserProfile.svg"
           alt=""
         />

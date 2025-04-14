@@ -1,6 +1,6 @@
 # Spot - Inventory System
 
-Spot is a simple inventory system designed to help you manage your items easily. 
+Spot is a simple inventory system designed to help you manage your items easily.
 
 ## Features
 
@@ -13,3 +13,4 @@ Spot is a simple inventory system designed to help you manage your items easily.
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/spot.git
+   ```
