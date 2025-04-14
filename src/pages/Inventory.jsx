@@ -67,16 +67,14 @@ export function Inventory() {
 
             {Width >= 776 ? (
               <>
-                <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
-                  <ImgBtn src="/search-btn.svg" />
+                <section className="flex items-center md:ml-3 md:h-12">
+                  <ImgBtn className="" src="/search-btn.svg" />
                 </section>
               </>
             ) : (
               <>
-                <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
-                  <Button className="poppins primary-bg font-semibold">
-                    ADD
-                  </Button>
+                <section className="x flex justify-center gap-5 md:ml-3">
+                  <ImgBtn src="/search-btn.svg" />
                 </section>
               </>
             )}

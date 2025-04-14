@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Alert({ children, visible }) {
+export function Alert({ children }) {
   return (
     <>
       <main
