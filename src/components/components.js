@@ -7,6 +7,7 @@ import { ImgBtn } from "./inputs/ImgBtn";
 // UI FOLDER
 import { Card } from "./ui/Card";
 import { Heading } from "./ui/Heading";
+import { Popover } from "./ui/Popover";
 // LAYOUT FOLDER
 import { Header } from "./layout/Header";
 import NavBar from "./layout/NavBar";
@@ -27,6 +28,7 @@ export {
   Goto,
   Card,
   Heading,
+  Popover,
   Header,
   NavBar,
   NavLinks,
