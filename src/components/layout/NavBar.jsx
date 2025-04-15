@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function NavBar({ children, className = "" }) {
   return (
     <>
-      <nav className="absolute z-10 h-lvh w-62 overflow-hidden bg-black px-3 py-4.5 outline-1 outline-[#b6b6b663] md:fixed md:top-0 md:block md:h-lvh md:w-18 md:outline-1 lg:w-2/12">
+      <nav className="absolute z-1 h-lvh w-62 overflow-hidden bg-black px-3 py-4.5 outline-1 outline-[#b6b6b663] md:fixed md:top-0 md:block md:h-lvh md:w-18 md:outline-1 lg:w-2/12">
         {children}
 
         <Link

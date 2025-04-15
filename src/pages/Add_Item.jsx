@@ -1,4 +1,4 @@
-import React, { useState, useEffect, use } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Header,
   NavBar,
@@ -11,6 +11,7 @@ import {
   Button,
   DropDown,
   Popover,
+  Alert,
 } from "../components/components";
 import { LinkDetails } from "../components/layout/SideBarLink";
 import { ScreenWidth, ItemData } from "../hooks/hooks";
@@ -27,12 +28,20 @@ export function Add_Item() {
     setPull((prev) => !prev);
   };
 
-  const ClickHandler = () => {
-    setHidden((prev) => !prev);
+  const ClickHandler = (e) => {
+    // setHidden((prev) => !prev);
+    console.table(e.currentTarget.id);
+    window.addEventListener("click", ClickHandler);
   };
 
   return (
     <>
+      <Alert
+        onClick={ClickHandler}
+        label="no account"
+        detail="are you sure wnat to delete it
+      "
+      />
       {Width <= 764 && <Header onClick={ClickHandler} />}
 
       {(hidden || Width >= 768) && (
@@ -102,6 +111,7 @@ export function Add_Item() {
           />
         ))}
       </main>
+
       <Popover onClick={pullHandler} popover={pull} />
     </>
   );
