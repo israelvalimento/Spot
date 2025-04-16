@@ -45,10 +45,6 @@ export function ItemList({ name, type, date, qty }) {
               <td className="text-left md:text-center lg:w-full lg:text-left">
                 {qty}
               </td>
-              <td className="absolute right-[2%] hidden gap-3.5 md:hidden lg:flex">
-                <ImgBtn className="size-8.5" src="/edit-icon.svg" />
-                <ImgBtn className="size-8.5" src="/del-icon.svg" />
-              </td>
             </>
           )}
         </tr>

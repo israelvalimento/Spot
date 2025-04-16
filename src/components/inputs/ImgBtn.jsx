@@ -1,7 +1,12 @@
 import React from "react";
 
-export function ImgBtn({ className = "", src = "", alt }) {
+export function ImgBtn({ className = "", src = "", onClick, alt }) {
   return (
-    <img className={`${className} flex cursor-pointer`} src={src} alt="" />
+    <img
+      onClick={onClick}
+      className={`${className} flex cursor-pointer`}
+      src={src}
+      alt=""
+    />
   );
 }

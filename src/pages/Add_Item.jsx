@@ -22,7 +22,15 @@ export function Add_Item() {
   const routes = ["/Home", "/Add_Item", "/Inventory"];
   const Width = ScreenWidth();
   const items = ItemData();
+
   const [hidden, setHidden] = useState(false);
+
+  const EditHandler = (index) => {
+    alert(`Edit: ${index}`);
+  };
+  const DelHandler = (index) => {
+    alert(`Delete: ${index}`);
+  };
 
   return (
     <>
@@ -90,14 +98,33 @@ export function Add_Item() {
         </section>
 
         <ItemHeading></ItemHeading>
-        {items.map((list) => (
-          <ItemList
-            key={list.id}
-            name={list.item_name}
-            type={list.item_type}
-            date={list.date.slice(0, list.date.indexOf("T"))}
-            qty={list.qty + " pc's"}
-          />
+        {items.map((list, index) => (
+          <>
+            <div key={list.id} className="flex items-center">
+              <ItemList
+                name={list.item_name}
+                type={list.item_type}
+                date={list.date.slice(0, list.date.indexOf("T"))}
+                qty={list.qty + " pc's"}
+              />
+              <div className="absolute right-[2%] hidden gap-3.5 md:hidden lg:flex">
+                {list.id && (
+                  <>
+                    <ImgBtn
+                      onClick={() => EditHandler(index)}
+                      className="size-8.5"
+                      src="/edit-icon.svg"
+                    />
+                    <ImgBtn
+                      onClick={() => DelHandler(index)}
+                      className="size-8.5"
+                      src="/del-icon.svg"
+                    />
+                  </>
+                )}
+              </div>
+            </div>
+          </>
         ))}
       </main>
 

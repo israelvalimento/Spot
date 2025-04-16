@@ -9,7 +9,7 @@ function NavBar({ children, className = "" }) {
 
         <Link
           to={"/"}
-          className="my-6.5 cursor-pointer items-center gap-x-4 rounded-xl bg-[#c0c0c027] p-3.5 leading-5"
+          className="absolute bottom-0 my-6.5 cursor-pointer items-center gap-x-4 rounded-xl bg-[#c0c0c027] p-3.5 leading-5 md:w-[70%] lg:w-[90%]"
         >
           <img className="size-5.5 md:block" src={Logouticon} alt="" />
           <span className="text-md font-bold md:hidden lg:block">Logout</span>
