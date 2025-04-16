@@ -23,26 +23,15 @@ export function Add_Item() {
   const Width = ScreenWidth();
   const items = ItemData();
   const [hidden, setHidden] = useState(false);
-  const [pull, setPull] = useState(false);
-  const pullHandler = () => {
-    setPull((prev) => !prev);
-  };
-
-  const ClickHandler = (e) => {
-    // setHidden((prev) => !prev);
-    console.table(e.currentTarget.id);
-    window.addEventListener("click", ClickHandler);
-  };
 
   return (
     <>
       <Alert
-        onClick={ClickHandler}
         label="no account"
         detail="are you sure wnat to delete it
       "
       />
-      {Width <= 764 && <Header onClick={ClickHandler} />}
+      {Width <= 764 && <Header />}
 
       {(hidden || Width >= 768) && (
         <NavBar>
@@ -101,9 +90,9 @@ export function Add_Item() {
         </section>
 
         <ItemHeading></ItemHeading>
-        {items.map((list, index) => (
+        {items.map((list) => (
           <ItemList
-            key={index}
+            key={list.id}
             name={list.item_name}
             type={list.item_type}
             date={list.date.slice(0, list.date.indexOf("T"))}
@@ -112,7 +101,7 @@ export function Add_Item() {
         ))}
       </main>
 
-      <Popover onClick={pullHandler} popover={pull} />
+      <Popover />
     </>
   );
 }
