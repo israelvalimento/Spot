@@ -15,6 +15,7 @@ import {
 import { LinkDetails } from "../components/layout/SideBarLink";
 import { ScreenWidth, ItemData } from "../hooks/hooks";
 import { ImgBtn } from "../components/inputs/ImgBtn";
+import { Edit } from "../components/modals/Edit";
 
 export function Inventory() {
   const [link] = useState(LinkDetails);
@@ -33,6 +34,7 @@ export function Inventory() {
 
   return (
     <>
+      <Edit></Edit>
       {Width <= 764 && <Header onClick={ClickHandler} />}
 
       {(hidden || Width >= 768) && (
@@ -56,7 +58,7 @@ export function Inventory() {
       <main className="overflow-x-hidden px-5 py-8 md:ml-[9.3%] md:pr-8 lg:ml-[16.7%]">
         <section className="text-center md:ml-8.5 md:text-left lg:ml-22">
           <Heading className="poppins font-semibold md:px-5">
-            Sort Item's
+            Search Item's
           </Heading>
 
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}

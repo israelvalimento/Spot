@@ -4,7 +4,7 @@ import Exit from "./assets/icons/exit-btn.svg";
 import { useState, useEffect } from "react";
 import { Button } from "../components";
 export function Alert({ label = "", detail = "", onClick, ref, id = "" }) {
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
   const ClickHandler = () => {
     setHidden((prev) => !prev);
