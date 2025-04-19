@@ -1,19 +1,12 @@
 import React from "react";
 import Exit from "./assets/icons/exit-btn.svg";
 
-import { useState, useEffect } from "react";
 import { Button, Heading, Input } from "../components";
-export function Edit({ label = "", detail = "", onClick, ref, id = "" }) {
-  const [exit, setExit] = useState(false);
-
-  const ExitHadndler = () => {
-    setExit((prev) => !prev);
-  };
-
+export function Edit({ onExit, onSave, ref }) {
   return (
     <>
-      {exit && (
-        <div>
+      {onExit && (
+        <div className={``}>
           <main
             id="alert"
             className={`fixed z-10 hidden h-lvh w-lvw items-center justify-center bg-[#ffffff10] backdrop-blur-xs`}
@@ -21,7 +14,7 @@ export function Edit({ label = "", detail = "", onClick, ref, id = "" }) {
             <section className="relative flex w-92 flex-col justify-center gap-5 rounded-lg bg-black">
               <article className="mb-auto pt-2 pr-2">
                 <img
-                  onClick={ExitHadndler}
+                  onClick={onExit}
                   className="size-7.5 cursor-pointer place-self-end"
                   src={Exit}
                   alt="exit-icon"
@@ -45,8 +38,10 @@ export function Edit({ label = "", detail = "", onClick, ref, id = "" }) {
                 </div>
               </article>
               <article className="flex justify-center gap-5 p-5">
-                <Button className="primary-bg">save edit</Button>
-                <Button onClick={ExitHadndler} className="bg-[red]">
+                <Button onClick={onSave} className="primary-bg">
+                  save edit
+                </Button>
+                <Button onClick={onExit} className="bg-[red]">
                   cancel
                 </Button>
               </article>

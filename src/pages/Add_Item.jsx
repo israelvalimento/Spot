@@ -12,6 +12,7 @@ import {
   DropDown,
   Popover,
   Alert,
+  Edit,
 } from "../components/components";
 import { LinkDetails } from "../components/layout/SideBarLink";
 import { ScreenWidth, ItemData } from "../hooks/hooks";
@@ -24,21 +25,33 @@ export function Add_Item() {
   const items = ItemData();
 
   const [hidden, setHidden] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [save, setSave] = useState(false);
 
-  const EditHandler = (index) => {
-    alert(`Edit: ${index}`);
+  const EditHandler = () => {
+    setModal(true);
   };
+  const SaveHandler = () => {
+    setSave(true);
+  };
+
   const DelHandler = (index) => {
     alert(`Delete: ${index}`);
   };
 
   return (
     <>
-      <Alert
-        label="no account"
-        detail="are you sure wnat to delete it
+      {modal && <Edit onSave={SaveHandler} onExit={() => setModal(false)} />}
+
+      {save && (
+        <Alert
+          onExit={() => setSave(false)}
+          label="Already Done?"
+          detail="are you sure want to save it
       "
-      />
+        />
+      )}
+
       {Width <= 764 && <Header />}
 
       {(hidden || Width >= 768) && (
@@ -111,7 +124,7 @@ export function Add_Item() {
                 {list.id && (
                   <>
                     <ImgBtn
-                      onClick={() => EditHandler(index)}
+                      onClick={EditHandler}
                       className="size-8.5"
                       src="/edit-icon.svg"
                     />

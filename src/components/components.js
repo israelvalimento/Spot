@@ -15,6 +15,7 @@ import NavLinks from "./layout/NavLinks";
 import { Navtitle } from "./layout/Navtitle";
 // MODAL FOLDER
 import { Alert } from "./modals/Alert";
+import { Edit } from "./modals/Edit";
 // INVENTORY LIST
 import { ItemHeading } from "./InventoryList/ItemHeading";
 import { ItemList } from "./InventoryList/ItemList";
@@ -32,6 +33,7 @@ export {
   NavLinks,
   Navtitle,
   Alert,
+  Edit,
   ItemHeading,
   ItemList,
 };
