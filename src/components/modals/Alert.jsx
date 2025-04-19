@@ -3,7 +3,7 @@ import Exit from "./assets/icons/exit-btn.svg";
 
 import { useState, useEffect } from "react";
 import { Button } from "../components";
-export function Alert({ label = "", detail = "", onSave, onExit }) {
+export function Alert({ label = "", detail = "", onConfirm, onExit }) {
   return (
     <>
       <div>
@@ -26,7 +26,9 @@ export function Alert({ label = "", detail = "", onSave, onExit }) {
               <p className="line-clamp-2 first-letter:capitalize">{detail}</p>
             </article>
             <article className="flex justify-center gap-5 p-5">
-              <Button className="primary-bg">confirm</Button>
+              <Button onClick={onConfirm} className="primary-bg">
+                confirm
+              </Button>
               <Button onClick={onExit} className="bg-[red]">
                 cancel
               </Button>

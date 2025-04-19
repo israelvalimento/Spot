@@ -28,12 +28,8 @@ export function Add_Item() {
   const [modal, setModal] = useState(false);
   const [save, setSave] = useState(false);
 
-  const EditHandler = () => {
-    setModal(true);
-  };
-  const SaveHandler = () => {
-    setSave(true);
-  };
+  const EditHandler = () => setModal(true);
+  const SaveHandler = () => setSave(true);
 
   const DelHandler = (index) => {
     alert(`Delete: ${index}`);
@@ -42,13 +38,15 @@ export function Add_Item() {
   return (
     <>
       {modal && <Edit onSave={SaveHandler} onExit={() => setModal(false)} />}
-
       {save && (
         <Alert
           onExit={() => setSave(false)}
+          onConfirm={() => {
+            setSave(false);
+            setModal(false);
+          }}
           label="Already Done?"
-          detail="are you sure want to save it
-      "
+          detail="are you sure want to save it"
         />
       )}
 
