@@ -17,20 +17,23 @@ import {
 import { LinkDetails } from "../components/layout/SideBarLink";
 import { ScreenWidth, ItemData } from "../hooks/hooks";
 import { ImgBtn } from "../components/inputs/ImgBtn";
+import { useSpotContex } from "../context/SpotProvider";
 
 export function Add_Item() {
   const [link] = useState(LinkDetails);
   const routes = ["/Home", "/Add_Item", "/Inventory"];
   const Width = ScreenWidth();
   const items = ItemData();
-
-  const [hidden, setHidden] = useState(false);
-  const [modal, setModal] = useState(false);
-  const [save, setSave] = useState(false);
-
-  const EditHandler = () => setModal(true);
-  const SaveHandler = () => setSave(true);
-
+  const {
+    hidden,
+    setHidden,
+    modal,
+    setModal,
+    save,
+    setSave,
+    EditHandler,
+    SaveHandler,
+  } = useSpotContex();
   const DelHandler = (index) => {
     alert(`Delete: ${index}`);
   };
@@ -50,9 +53,16 @@ export function Add_Item() {
         />
       )}
 
-      {Width <= 764 && <Header />}
+      {Width <= 764 && (
+        <Header
+          onClick={() => {
+            setHidden((prev) => !prev);
+            console.log(hidden);
+          }}
+        />
+      )}
 
-      {(hidden || Width >= 768) && (
+      {(Width >= 768 || hidden) && (
         <NavBar>
           <Navtitle>
             <Heading className="mate-sc md:hidden lg:block">
