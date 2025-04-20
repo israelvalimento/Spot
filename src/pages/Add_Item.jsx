@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import {
   Header,
   NavBar,
@@ -36,6 +36,20 @@ export function Add_Item() {
   } = useSpotContex();
   const DelHandler = (index) => {
     alert(`Delete: ${index}`);
+  };
+  const [addItem, setAddItem] = useState([{}]);
+  const ItemNameRef = useRef(null);
+  const ItemTypeRef = useRef(null);
+  const ItemQtyRef = useRef(null);
+
+  const addHander = () => {
+    const item_name = ItemNameRef.current.value;
+    const item_type = ItemTypeRef.current.value;
+    const qty = ItemQtyRef.current.value;
+    console.log(item_name, item_type, qty);
+    if (!item_name || !item_type || !qty) return;
+    setAddItem((prev) => [...prev, { item_name, item_type, qty }]);
+    console.log(addItem);
   };
 
   return (
@@ -88,14 +102,22 @@ export function Add_Item() {
 
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
           <article className="my-20 flex w-full flex-col gap-3 px-5 md:h-12 md:flex-row">
-            <Input className="w-full md:w-64" placeholder="Item name"></Input>
-            <Input className="w-full md:w-64" placeholder="Item type"></Input>
-            <DropDown className="w-full md:w-22" />
+            <Input
+              ref={ItemNameRef}
+              className="w-full md:w-64"
+              placeholder="Item name"
+            ></Input>
+            <Input
+              ref={ItemTypeRef}
+              className="w-full md:w-64"
+              placeholder="Item type"
+            ></Input>
+            <DropDown ref={ItemQtyRef} className="w-full md:w-22" />
 
             {Width >= 776 ? (
               <>
                 <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
-                  <ImgBtn src="/add-icon.svg" />
+                  <ImgBtn onClick={addHander} src="/add-icon.svg" />
                 </section>
               </>
             ) : (

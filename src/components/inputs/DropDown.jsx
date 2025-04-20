@@ -4,6 +4,7 @@ export function DropDown({ className = "", ref }) {
   return (
     <main className="relative">
       <select
+        ref={ref}
         defaultValue={"Qty"}
         className={`${className} poppins z-20 flex appearance-none rounded-lg border-1 px-3 py-3`}
       >
