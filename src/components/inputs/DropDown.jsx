@@ -1,11 +1,13 @@
 import arrow_down from "./assets/arrow_down.svg";
 
-export function DropDown({ className = "", ref }) {
+export function DropDown({ className = "", ref, name = "", onChange }) {
   return (
     <main className="relative">
       <select
+        name={name}
         ref={ref}
         defaultValue={"Qty"}
+        onChange={onChange}
         className={`${className} poppins z-20 flex appearance-none rounded-lg border-1 px-3 py-3`}
       >
         <option className="hidden" value="Qty" disabled>

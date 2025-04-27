@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { use, useEffect, useMemo, useRef, useState } from "react";
 import {
   Header,
   NavBar,
@@ -37,20 +37,26 @@ export function Add_Item() {
   const DelHandler = (index) => {
     alert(`Delete: ${index}`);
   };
-  const [addItem, setAddItem] = useState([{}]);
-  const ItemNameRef = useRef(null);
-  const ItemTypeRef = useRef(null);
-  const ItemQtyRef = useRef(null);
 
-  const addHander = () => {
-    const item_name = ItemNameRef.current.value;
-    const item_type = ItemTypeRef.current.value;
-    const qty = ItemQtyRef.current.value;
-    console.log(item_name, item_type, qty);
-    if (!item_name || !item_type || !qty) return;
-    setAddItem((prev) => [...prev, { item_name, item_type, qty }]);
-    console.log(addItem);
+  const [addItems, setaddItems] = useState({
+    Item_ID: "",
+    ItemName: "",
+    ItemType: "",
+    Qty: "",
+  });
+  const [lastItemId, setLastItemId] = useState(0);
+  const ChangeHandler = (e) => {
+    setLastItemId((prev) => prev + 1);
+    setaddItems({
+      ...addItems,
+      Item_ID: lastItemId,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  useEffect(() => {
+    console.log(addItems);
+  }, [addItems]);
 
   return (
     <>
@@ -103,27 +109,39 @@ export function Add_Item() {
           {/* ADDING ITEMS USER INPUTS ELEMENTS ARTICLE */}
           <article className="my-20 flex w-full flex-col gap-3 px-5 md:h-12 md:flex-row">
             <Input
-              ref={ItemNameRef}
+              name="ItemName"
               className="w-full md:w-64"
               placeholder="Item name"
-            ></Input>
+              onChange={ChangeHandler}
+            />
             <Input
-              ref={ItemTypeRef}
+              name="ItemType"
               className="w-full md:w-64"
               placeholder="Item type"
-            ></Input>
-            <DropDown ref={ItemQtyRef} className="w-full md:w-22" />
+              onChange={ChangeHandler}
+            />
+            <DropDown
+              name="Qty"
+              onChange={ChangeHandler}
+              className="w-full md:w-22"
+            />
 
             {Width >= 776 ? (
               <>
                 <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
-                  <ImgBtn onClick={addHander} src="/add-icon.svg" />
+                  <ImgBtn
+                    onClick={() => console.log(addItems)}
+                    src="/add-icon.svg"
+                  />
                 </section>
               </>
             ) : (
               <>
                 <section className="flex justify-center gap-5 md:ml-3 md:gap-3">
-                  <Button className="poppins primary-bg font-semibold">
+                  <Button
+                    onClick={() => console.log(addItems)}
+                    className="poppins primary-bg font-semibold"
+                  >
                     ADD
                   </Button>
                 </section>
@@ -140,9 +158,11 @@ export function Add_Item() {
           </section>
         </section>
 
-        <ItemHeading></ItemHeading>
-        {items.map((list, index) => (
-          <>
+        <ItemHeading />
+        {items.length <= 0 ? (
+          <div className="flex items-center text-8xl">no item added....</div>
+        ) : (
+          items.map((list, index) => (
             <div key={list.id} className="flex items-center">
               <ItemList
                 name={list.item_name}
@@ -167,10 +187,9 @@ export function Add_Item() {
                 )}
               </div>
             </div>
-          </>
-        ))}
+          ))
+        )}
       </main>
-
       <Popover />
     </>
   );
